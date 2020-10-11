@@ -6,8 +6,8 @@
 	"scripts": {
 		"start": "node app.js",
 		"build": "npm run build --prefix client",
-		"install-dependencies": "npm install --prefix client",
-		"heroku-postbuild": "\"npm run install-dependencies\" && npm run build",
+		"install": "npm install --prefix client",
+		"heroku-postbuild": "\"npm run install\" && npm run build",
 		"client": "npm start --prefix client"
 	},
 	"keywords": [],
