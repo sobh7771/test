@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { request, gql } from "graphql-request";
 import axios from "axios";
-require("dotenv").parse("../.env");
 
-const { CLOUD_NAME, UPLOAD_PRESET } = process.env;
+const { REACT_APP_CLOUD_NAME, REACT_APP_UPLOAD_PRESET } = process.env;
 
 function FileUpload() {
 	const [file, setFile] = useState(null);
@@ -16,10 +15,10 @@ function FileUpload() {
 		const fd = new FormData();
 
 		fd.append("file", file);
-		fd.append("upload_preset", UPLOAD_PRESET);
+		fd.append("upload_preset", REACT_APP_UPLOAD_PRESET);
 
 		const res = await axios.post(
-			`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+			`https://api.cloudinary.com/v1_1/${REACT_APP_CLOUD_NAME}/image/upload`,
 			fd
 		);
 
