@@ -1,0 +1,23 @@
+{
+	"name": "react-graphql-cloudinary-fileupload",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node app.js",
+		"build": "npm run build --prefix client",
+		"install-dependencies": "npm install --prefix client",
+		"heroku-postbuild": "\"npm run install-dependencies\" && npm run build",
+		"client": "npm start --prefix client"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"apollo-server": "^2.18.2",
+		"cloudinary": "^1.23.0",
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"graphql": "^15.3.0"
+	}
+}
